@@ -4,7 +4,10 @@ export default class Add extends Command {
     message: Args.string({description: 'Message to add to journal', required: true}),
   }
   static override description = 'Create a new journal entry'
-  static override examples = ['<%= config.bin %> <%= command.id %> "Journal note" --confidence "5"']
+  static override examples = [
+    '<%= config.bin %> <%= command.id %> "Journal entry" --confidence 5',
+    '<%= config.bin %> <%= command.id %> "Another journal entry" -c 2',
+  ]
   static override flags = {
     confidence: Flags.string({
       char: 'c',
