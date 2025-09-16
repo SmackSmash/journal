@@ -1,5 +1,4 @@
 import {Args, Command, Flags} from '@oclif/core'
-import {db} from '../db'
 export default class Add extends Command {
   static override args = {
     message: Args.string({description: 'Message to add to journal', required: true}),
