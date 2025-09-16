@@ -1,4 +1,5 @@
 import {Command} from '@oclif/core'
+import {db} from '../db'
 
 export default class List extends Command {
   static override description = 'List all journal entries'
