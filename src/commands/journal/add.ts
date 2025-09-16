@@ -1,4 +1,6 @@
 import {Args, Command, Flags} from '@oclif/core'
+
+import JournalDb from '../../lib/db.js'
 export default class Add extends Command {
   static override args = {
     message: Args.string({description: 'Message to add to journal', required: true}),
@@ -19,8 +21,13 @@ export default class Add extends Command {
 
   public async run(): Promise<void> {
     const {args, flags} = await this.parse(Add)
+    const date = new Date().toISOString().split('T')[0]
+
+    const db = new JournalDb()
+
+    await db.createEntry({confidence: flags.confidence, date, message: args.message})
 
     this.log(args.message)
-    this.log(`# → Entry added on ${new Date().toISOString().split('T')[0]} with confidence level ${flags.confidence}/5`)
+    this.log(`# → Entry added on ${date} with confidence level ${flags.confidence}/5`)
   }
 }

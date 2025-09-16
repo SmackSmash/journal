@@ -1,6 +1,6 @@
 export type Entry = {
   confidence: string
   date: string
-  id: number
-  messgage: string
+  id?: bigint | number
+  message: string
 }
