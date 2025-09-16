@@ -11,6 +11,7 @@
     "@oclif/core": "^4",
     "@oclif/plugin-help": "^6",
     "@oclif/plugin-plugins": "^5",
+    "better-sqlite3": "^12.2.0",
     "sqlite": "^5.1.1"
   },
   "devDependencies": {
