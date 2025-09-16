@@ -1,4 +1,4 @@
-type Entry = {
+export type Entry = {
   confidence: string
   date: string
   id: number
